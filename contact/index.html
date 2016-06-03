@@ -1,0 +1,42 @@
+---
+layout: page
+title: Contact Me
+description: "Get in touch"
+logo: true
+comments: false
+---
+<p>If you'd like to hire me, buy me a beer, or contact me for any other reason, fill up the form and I'll get in touch ASAP.</p>
+<div class="form-wrapper">
+  <img src="{{site.url}}/images/spinner.png" class="spinner"/>
+  <div class="success-flash">
+    <img src="{{site.url}}/images/success.png" class="success-flash"/>
+    <button class="black md-button reset-button">Reset?</button>
+  </div>
+  <div class="fail-flash">
+    <img src="{{site.url}}/images/fail.png" class="fail-flash"/>
+    <button class="black md-button reset-button">Reset?</button>
+  </div>
+  <form class="md-form">
+    <div class="form-group">
+      <input id="input" name="Name" type="text" required="true"/>
+      <label for="input">Name</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input id="input" name="Company" type="text" required="false"/>
+      <label for="input">Company</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input id="input" name="Email" type="email" required="required"/>
+      <label for="input">Email</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input id="input" name="Mobile Number" type="tel" required="required"/>
+      <label for="input">Mobile No.</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <textarea id="textarea" name="Enquiry" required="required"></textarea>
+      <label for="textarea">Tell me what you need</label><i class="bar"></i>
+    </div>
+    <button class="black md-button">Submit</button>
+  </form>
+</div>

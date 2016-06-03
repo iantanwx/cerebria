@@ -1,0 +1,11 @@
+_site
+.DS_Store
+s3_website.yml
+*.psd
+*.sublime-project
+*.sublime-workspace
+codekit-config.json
+node_modules
+Gemfile.lock
+.sass-cache
+.jekyll-metadata
