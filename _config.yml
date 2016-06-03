@@ -28,16 +28,8 @@ owner:
   bio:            "Hello, I'm Ian. I develop fullstack web solutions from end-to-end."
   email:          ian@subversion.digital
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:
+  twitter: iantanwx       
+  github: iantanwx        
 
 # Background image to be tiled on all pages
 background: 
