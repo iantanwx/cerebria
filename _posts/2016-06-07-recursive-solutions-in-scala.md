@@ -42,7 +42,7 @@ function factorizer(n) {
 
 {% endhighlight %}
 
-See how elegant the Scala function is compared to the imperative JavaScript loop? Substitution enables this. Let's break down our `factorizer` function, subtituting values from left to right:
+See how elegant the Scala function is compared to the imperative JavaScript loop? Let's break down our `factorizer` function, subtituting values from left to right:
 
 	// call the function
 	factorizer(3)
@@ -62,6 +62,15 @@ See how elegant the Scala function is compared to the imperative JavaScript loop
 
 	// finally
 	3 * 2 * 1 * 1
+
+Tail Recursion
+--------------
+
+At this point, you're probably thinking, "couldn't we just as well have written the same recursive loop in JavaScript"? Well, the answer is yes and no. ES6 is set to implement tail call optimization (TCO), where if a recursive call is made as the _final_ statement in a function body, that is treated as tail recursive.
+
+That simply means that only one stack frame is used for the recursion: local variables simply get replaced by new values on subsequent calls. Unfortunately, this hasn't yet been implemented in the V8 engine, and, consequently, means that recursion is JavaScript is limited.
+
+Of course, recursion is possible and in fact quite alright in JavaScript, until the size of the input causes enough recursive calls to produce a stack overflow, or simply eats up all available memory, causing the entire machine to halt. That's a pretty real problem for many, even simple algorithms, like [these](https://mitpress.mit.edu/sicp/chapter1/node13.html).
 
 Call-by-value vs Call-by-name
 -----------------------------
