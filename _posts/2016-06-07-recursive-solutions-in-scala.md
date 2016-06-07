@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Recursive Solutions in Scala"
+title: "A Simple Maiden Post"
 modified: 2016-06-07 09:54:53 +0800
 tags: [Scala, Coursera, Martin Odersky, Recursion, Functional Programming]
 image:
@@ -11,7 +11,7 @@ comments:
 share: 
 ---
 
-Since I didn't have much of an idea of what I should write as my maiden post, I thought I'd just share some thoughts on Martin Odersky's Functional Programming Principles in Scala, which I'm now taking on Coursera, and my solutions for Week 1 and 2's assignments.
+Since I didn't have much of an idea of what I should write as my maiden post, I thought I'd just share some thoughts on Martin Odersky's Functional Programming Principles in Scala, which I'm now taking on Coursera, and my solutions for Week 1 and 2's assignments. From here on out, I'm mostly going to use this blog to consolidate the things I learn.
 
 The Substitution Principle
 --------------------------
