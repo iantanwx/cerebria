@@ -1,4 +1,0 @@
-# Forwarded GIF_NAME as a query string
-
-RewriteEngine On
-RewriteRule ^(midlet|wap|ajax|touch)\/gift\/([0-9]+)_(\w+)\/([0-9]+)\/([0-9]+)? /gift.php?view=$1&gift_id=$2&gif_name=$3&sender_id=$4&receiver_id=$5
