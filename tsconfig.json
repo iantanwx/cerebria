@@ -6,9 +6,11 @@
         "module": "commonjs",
         "target": "esnext",
         "jsx": "react",
-        "lib": ["dom", "esnext"]
+        "lib": ["dom", "esnext"],
+        "typeRoots": ["./typings", "node_modules/@types"]
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./typings/**/*.d.ts"
     ]
 }
