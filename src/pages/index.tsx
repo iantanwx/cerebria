@@ -1,6 +1,5 @@
-import * as React from "react";
-import Link from "gatsby-link";
-import { menuItems } from "../layouts";
+import * as React from 'react';
+import Link from 'gatsby-link';
 
 interface IndexPageProps {
   location: {
@@ -8,4 +7,6 @@ interface IndexPageProps {
   };
 }
 
-export default (props: IndexPageProps) => <div>HELLO THIS IS THE HOME PAGE</div>;
+export default (props: IndexPageProps) => (
+  <div>HELLO THIS IS THE HOME PAGE</div>
+);

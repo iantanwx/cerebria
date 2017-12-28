@@ -1,12 +1,6 @@
-import Link from "gatsby-link";
-import * as React from "react";
-import "prismjs/themes/prism-okaidia.css";
-
-export const menuItems = [
-  { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
-  { name: "About", path: "/about/", exact: true, icon: "info circle" },
-  { name: "Blog", path: "/blog/", exact: false, icon: "newspaper" },
-];
+import Menu from '../components/Menu';
+import * as React from 'react';
+import 'prismjs/themes/prism-okaidia.css';
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
@@ -15,11 +9,19 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   children: any;
 }
 
-export default class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
+export default class DefaultLayout extends React.PureComponent<
+  DefaultLayoutProps,
+  void
+> {
   render() {
     const { pathname } = this.props.location;
-    const isHome = pathname === "/";
+    const isHome = pathname === '/';
 
-    return <div>{this.props.children()}</div>;
+    return (
+      <div>
+        <Menu />
+        {this.props.children()}
+      </div>
+    );
   }
 }
