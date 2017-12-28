@@ -1,6 +1,7 @@
 const path = require('path');
 const slash = require('slash');
-const {kebabCase, uniq, get, compact, times} = require('lodash');
+const {uniq, get, compact, times, reduce} = require('lodash');
+const uuid = require('uuid/v4');
 
 // Don't forget to update hard code values into:
 // - `templates/blog-page.tsx:23`
@@ -22,7 +23,10 @@ exports.modifyWebpackConfig = ({config, stage}) => {
     config.loader('typescript', {
       test: /\.tsx?$/,
       loaders: [
-        `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
+        `babel-loader?${JSON.stringify({
+          presets: ['babel-preset-env'],
+          plugins: [extractQueryPlugin]
+        })}`,
         'ts-loader'
       ]
     });
@@ -31,8 +35,8 @@ exports.modifyWebpackConfig = ({config, stage}) => {
 
 // Create slugs for files.
 // Slug will used for blog page path.
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
+  const {createNodeField} = boundActionCreators;
   let slug;
   switch (node.internal.type) {
     case 'MarkdownRemark': {
@@ -40,14 +44,14 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       const [basePath, name] = fileNode.relativePath.split('/');
 
       if (basePath && name) {
-        createNodeField({ node, name: 'slug', value: `/${basePath}/${name}` });
+        createNodeField({node, name: 'slug', value: `/${basePath}/${name}`});
       }
 
-      createNodeField({ node, name: 'id', value: uuid() });
+      createNodeField({node, name: 'id', value: uuid()});
     }
 
     default:
-      return;
+
   }
 };
 
@@ -55,8 +59,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 // This is called after the Gatsby bootstrap is finished
 // so you have access to any information necessary to
 // programatically create pages.
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({graphql, boundActionCreators}) => {
+  const {createPage} = boundActionCreators;
 
   return new Promise((resolve, reject) => {
     const templates = ['Post'].reduce((mem, templateName) => {
@@ -83,16 +87,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       `
-    ).then((result) => {
+    ).then(result => {
       if (result.errors) {
         return reject(result.errors);
       }
-      const posts = result.data.posts.edges.map((p) => p.node);
+      const posts = result.data.posts.edges.map(p => p.node);
 
       // Create blog pages
       posts
-        .filter((post) => post.fields.slug.startsWith('/blog/'))
-        .forEach((post) => {
+        .filter(post => post.fields.slug.startsWith('/blog/'))
+        .forEach(post => {
           createPage({
             path: post.fields.slug,
             component: slash(templates.Post),
