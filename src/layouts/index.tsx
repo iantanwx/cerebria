@@ -1,11 +1,5 @@
 import Link from "gatsby-link";
 import * as React from "react";
-import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
-import SidebarMenu from "../components/SidebarMenu/SidebarMenu";
-import { Segment, Icon, Container, Sidebar, Button } from "semantic-ui-react";
-import "../css/styles.css";
-import "../css/responsive.css";
-import "../css/semantic.min.css";
 import "prismjs/themes/prism-okaidia.css";
 
 export const menuItems = [
@@ -26,28 +20,6 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
     const { pathname } = this.props.location;
     const isHome = pathname === "/";
 
-    return (
-      <Sidebar.Pushable as={Segment}>
-        <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
-        <Sidebar.Pusher style={{ minHeight: "100vh" }}>
-          {/* Header */}
-          {isHome ? null : <HeaderMenu
-            Link={Link} pathname={pathname} items={menuItems}
-          />}
-
-          {/* Render children pages */}
-          <div style={{ paddingBottom: 60 }}>
-            {this.props.children()}
-          </div>
-
-          {/* Footer */}
-          <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
-            <Container textAlign="center">
-              <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
-            </Container>
-          </Segment>
-        </Sidebar.Pusher>
-      </Sidebar.Pushable>
-    );
+    return <div>{this.props.children()}</div>;
   }
 }
