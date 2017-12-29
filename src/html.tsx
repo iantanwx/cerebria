@@ -1,14 +1,14 @@
 /* tslint:disable no-var-requires */
 /* tslint:disable no-console */
 
-import * as React from "react";
-import Helmet from "react-helmet";
+import * as React from 'react';
+import Helmet from 'react-helmet';
 
 // Load production style
 let styles: string;
 if (process.env.NODE_ENV === `production`) {
   try {
-    styles = require("!raw-loader!../public/styles.css");
+    styles = require('!raw-loader!../public/styles.css');
   } catch (err) {
     console.log(err);
   }
@@ -24,18 +24,18 @@ interface HtmlProps {
 module.exports = (props: HtmlProps) => {
   const head = Helmet.rewind();
 
-  const css = (process.env.NODE_ENV === `production`) ?
-    <style
-      id="gatsby-inlined-css"
-      dangerouslySetInnerHTML={{ __html: styles }}
-    />
-    : null;
+  const css =
+    process.env.NODE_ENV === `production` ? (
+      <style
+        id="gatsby-inlined-css"
+        dangerouslySetInnerHTML={{ __html: styles }}
+      />
+    ) : null;
 
   return (
     <html lang="en">
       <head>
         {props.headComponents}
-        <title>My website</title>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -48,10 +48,7 @@ module.exports = (props: HtmlProps) => {
         {css}
       </head>
       <body>
-        <div
-          id="___gatsby"
-          dangerouslySetInnerHTML={{ __html: props.body }}
-        />
+        <div id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
       </body>
     </html>
