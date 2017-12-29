@@ -1,7 +1,8 @@
-import Menu from '../components/Menu';
 import * as React from 'react';
+import { Grid } from 'react-styled-flexboxgrid';
 import 'prismjs/themes/prism-okaidia.css';
 import 'normalize.css';
+import Menu from '../components/Menu';
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
   location: {
@@ -19,10 +20,10 @@ export default class DefaultLayout extends React.PureComponent<
     const isHome = pathname === '/';
 
     return (
-      <div>
+      <Grid>
         <Menu />
         {this.props.children()}
-      </div>
+      </Grid>
     );
   }
 }
