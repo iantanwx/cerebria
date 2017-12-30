@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Header1, Header2, Header3 } from '../Components/Headers';
-import Skill from '../Components/Skill';
+import { Header1, Header2, Header3 } from '../components/Headers';
+import Skill from '../components/Skill';
 import { Grid, Row, Col as Column } from 'react-styled-flexboxgrid';
 
 export default class AboutPage extends React.Component<any> {
