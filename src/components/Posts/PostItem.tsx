@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from 'gatsby-link';
+import PostItemHeader from './PostItemHeader';
 
 interface PostItemProps {
   date: string;
@@ -15,7 +15,7 @@ export default class PostItem extends React.Component<PostItemProps> {
     return (
       <div>
         <p>{date}</p>
-        <h2><Link to={slug}>{title}</Link></h2>
+        <PostItemHeader to={slug} text={title} />
         <p>{excerpt}</p>
       </div>
     );

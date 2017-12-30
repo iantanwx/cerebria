@@ -9,7 +9,11 @@ const Header1 = styled.h1`
 
 const Header2 = styled.h2`
   display: block;
-  text-align: center;
+  font-family: 'Open Sans';
+  text-align: left;
+  & > *, & > *::before {
+    padding: 0;
+  }
 `;
 
 const Header3 = styled.h3`
