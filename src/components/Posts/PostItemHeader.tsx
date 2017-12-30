@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Link from '../Link';
-import { Header2 } from '../Header';
+import { Header2 } from '../Headers';
 
 interface PostItemHeaderProps {
   date: string;

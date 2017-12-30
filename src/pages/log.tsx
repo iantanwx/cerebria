@@ -1,16 +1,15 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 import { map } from 'lodash';
-import { Grid, Row, Col as Column } from 'react-styled-flexboxgrid';
+import { Row, Col as Column } from 'react-styled-flexboxgrid';
 
-import { Header1, Header3 } from '../components/Header';
+import { Header1, Header3 } from '../components/Headers';
 import { PostItem } from '../components/Posts';
 // import { MarkdownRemarkConnection, ImageSharp } from '../graphql-types';
 
 export default class LogPage extends React.Component<any> {
   render() {
     return (
-      <Grid>
         <Row>
           <Column md={12}>
             <Header1>Log</Header1>
@@ -30,7 +29,6 @@ export default class LogPage extends React.Component<any> {
             })}
           </Column>
         </Row>
-      </Grid>
     );
   }
 }
