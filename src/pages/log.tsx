@@ -1,25 +1,36 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 import { map } from 'lodash';
+import { Grid, Row, Col as Column } from 'react-styled-flexboxgrid';
 
+import { Header1, Header3 } from '../components/Header';
 import { PostItem } from '../components/Posts';
 // import { MarkdownRemarkConnection, ImageSharp } from '../graphql-types';
 
 export default class LogPage extends React.Component<any> {
   render() {
     return (
-      <div>
-        {map(this.props.data.posts.edges, ({ node }) => {
-          return (
-            <PostItem
-              key={node.fields.id}
-              date={node.frontmatter.updatedDate}
-              title={node.frontmatter.title}
-              slug={node.fields.slug}
-            />
-          );
-        })}
-      </div>
+      <Grid>
+        <Row>
+          <Column md={12}>
+            <Header1>Log</Header1>
+            <Header3>Programming, coffee, and life.</Header3>
+          </Column>
+          <Column xs={12} sm={12} mdOffset={2} lgOffset={2} md={8} lg={8}>
+            {map(this.props.data.posts.edges, ({ node }) => {
+              return (
+                <PostItem
+                  key={node.fields.id}
+                  excerpt={node.excerpt}
+                  date={node.frontmatter.updatedDate}
+                  title={node.frontmatter.title}
+                  slug={node.fields.slug}
+                />
+              );
+            })}
+          </Column>
+        </Row>
+      </Grid>
     );
   }
 }

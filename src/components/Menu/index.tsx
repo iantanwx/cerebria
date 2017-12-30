@@ -3,14 +3,11 @@ import Link from '../Link';
 import items from './items';
 import styled from 'styled-components';
 
-const List = styled.ul`
-  list-style: none;
+const List = styled.nav`
   margin-left: 0;
-`;
-
-const Item = styled.li`
-  display: inline-block;
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
 `;
 
 export default class Menu extends React.Component<any> {
@@ -18,9 +15,9 @@ export default class Menu extends React.Component<any> {
     return (
       <List>
         {items.map((item) => (
-          <Item key={item.name}>
-            <Link to={item.path}>{item.name}</Link>
-          </Item>
+          <Link key={item.name} to={item.path} data-hover={item.name}>
+            {item.name}
+          </Link>
         ))}
       </List>
     );

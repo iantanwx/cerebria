@@ -3,18 +3,21 @@ import Link from 'gatsby-link';
 
 interface PostItemProps {
   date: string;
+  excerpt: string;
   title: string;
   slug: string;
 }
 
 export default class PostItem extends React.Component<PostItemProps> {
   render() {
-    const { date, title, slug } = this.props;
+    const { date, excerpt, title, slug } = this.props;
+
     return (
       <div>
-        <p>{date}   <Link to={slug}>{title}</Link></p>
+        <p>{date}</p>
+        <h2><Link to={slug}>{title}</Link></h2>
+        <p>{excerpt}</p>
       </div>
     );
   }
 }
-
