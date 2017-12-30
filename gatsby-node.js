@@ -81,7 +81,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       // Create blog pages
       posts
-        .filter((post) => post.fields.slug.startsWith('/blog/'))
+        .filter((post) => post.fields.slug.startsWith('/log/'))
         .forEach((post) => {
           createPage({
             path: post.fields.slug,
