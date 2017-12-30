@@ -13,7 +13,7 @@ export default class AboutPage extends React.Component<any> {
         <Column xs={12} sm={12} mdOffset={2} lgOffset={2} md={8} lg={8}>
           <Header3>
             Hello, I'm Ian. I'm a fullstack web developer. My bread and butter
-            are kindScript and Go, although I can occassionally be found
+            are TypeScript and Go, although I can occassionally be found
             fiddling with Clojure(script) and Scala.
           </Header3>
         </Column>
