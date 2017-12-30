@@ -7,7 +7,6 @@ export default styled(Link)`
   padding: 0 10px;
   color: #000;
   position: relative;
-  font-size: 18px;
   line-height: normal;
 
   &:before {

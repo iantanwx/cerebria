@@ -9,7 +9,7 @@ const Header1 = styled.h1`
 
 const Header2 = styled.h2`
   display: block;
-  font-family: 'Open Sans';
+  font-weight: normal;
   text-align: left;
   & > *, & > *::before {
     padding: 0;

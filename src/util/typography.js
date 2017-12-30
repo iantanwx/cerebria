@@ -6,7 +6,7 @@ const typography = new Typography({
     { name: 'Libre+Baskerville', styles: ['500', '500i', '700', '700i'] },
     { name: 'Open Sans', styles: ['400', '400i'] }
   ],
-  headerFontFamily: ['Libre+Baskerville'],
+  headerFontFamily: ['Libre Baskerville'],
   bodyFontFamily: ['Open Sans', 'sans serif'],
   bodyWeight: '400',
 });

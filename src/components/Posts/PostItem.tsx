@@ -14,8 +14,7 @@ export default class PostItem extends React.Component<PostItemProps> {
 
     return (
       <div>
-        <p>{date}</p>
-        <PostItemHeader to={slug} text={title} />
+        <PostItemHeader date={date} to={slug} text={title} />
         <p>{excerpt}</p>
       </div>
     );
